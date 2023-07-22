@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json.schemastore.org/package",
+  "name": "@acme/ui-utils",
+  "version": "0.0.1-beta.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "clean": "git clean -xdf .turbo node_modules dist",
+    "lint": "eslint \"src/**/*.{ts,js,tsx,jsx}\" --fix",
+    "type:check": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "devDependencies": {
+    "@acme/tsconfig": "0.0.1-beta.1",
+    "@testing-library/react": "^14.0.0",
+    "@types/lodash": "^4.14.195",
+    "@types/react": "^18.2.13",
+    "@types/react-dom": "^18.2.6",
+    "@vitejs/plugin-react-swc": "^3.3.2",
+    "clsx": "^1.2.1",
+    "react": "^18.2.0",
+    "tailwind-merge": "^1.13.2",
+    "tsup": "^7.0.0"
+  },
+  "peerDependencies": {
+    "react": ">=18.2.0"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}

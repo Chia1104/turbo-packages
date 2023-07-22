@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json.schemastore.org/package",
+  "name": "docs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --port 3001",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "format": "prettier --write \"**/*.{js,jsx,cjs,mjs,ts,tsx,md}\"",
+    "format:check": "prettier --check \"**/*.{js,jsx,cjs,mjs,ts,tsx,md}\"",
+    "type:check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@acme/ui": "0.0.1-beta.1",
+    "@acme/ui-utils": "0.0.1-beta.1",
+    "@acme/utils": "0.0.1-beta.1",
+    "@next/bundle-analyzer": "^13.4.7",
+    "dayjs": "^1.11.8",
+    "framer-motion": "^10.12.17",
+    "lodash": "^4.17.21",
+    "next": "latest",
+    "nextra": "^2.8.0",
+    "nextra-theme-docs": "^2.8.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "server-only": "^0.0.1",
+    "sharp": "^0.32.1"
+  },
+  "devDependencies": {
+    "@acme/tailwind-config": "0.0.1-beta.1",
+    "@acme/tsconfig": "0.0.1-beta.1",
+    "@testing-library/react": "^14.0.0",
+    "@types/node": "20.3.1",
+    "@types/react": "^18.2.13",
+    "@types/react-dom": "^18.2.6",
+    "@vitejs/plugin-react-swc": "^3.3.2",
+    "autoprefixer": "10.4.14",
+    "postcss": "8.4.24",
+    "tailwindcss": "^3.3.2"
+  }
+}

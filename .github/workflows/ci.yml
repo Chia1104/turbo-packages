@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  pull_request:
+    types: [ opened, labeled, unlabeled, synchronize ]
+    paths:
+      - "packages/ui/**"
+      - "packages/utils/**"
+      - "packages/ui-utils/**"
+      - ".github/workflows/ci.yml"
+      - "package.json"
+
+env:
+  TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+jobs:
+  build:
+    name: Build and Test
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: '🐙️ Check out code'
+        uses: actions/checkout@v3
+
+      - name: '💽️  Init'
+        id: init
+        uses: './.github/actions/init-pnpm'
+
+      - name: '📦  Install'
+        id: install
+        uses: './.github/actions/pnpm-install'
+        with:
+          INSTALL_COMMAND: '--filter "@acme/*" --filter root'
+
+      - name: '🏗️  Build'
+        id: build
+        uses: './.github/actions/pnpm-build'
+        with:
+          BUILD_COMMAND: 'build --filter @acme/ui...'
+          TURBO_TEAM: ${{ env.TURBO_TEAM }}
+          TURBO_TOKEN: ${{ env.TURBO_TOKEN }}
+
+      - name: '🚨️  ESLint, Type checking, Unit tests'
+        id: lint-test
+        uses: './.github/actions/lint-test'
+        with:
+          COMMAND: '--filter @acme/ui...'
+          TURBO_TEAM: ${{ env.TURBO_TEAM }}
+          TURBO_TOKEN: ${{ env.TURBO_TOKEN }}

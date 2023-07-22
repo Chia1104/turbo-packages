@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .acme-background::before {
+        content: '';
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        background: transparent radial-gradient(#bfbfbf 0.5px, transparent 0);
+        background-size: 11px 11px;
+        z-index: -4;
+    }
+
+    .dark .acme-background::before {
+        background-image: radial-gradient(#535353 0.5px, transparent 0);
+    }
+}

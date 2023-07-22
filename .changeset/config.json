@@ -1,0 +1,14 @@
+{
+  "$schema": "https://unpkg.com/@changesets/config@2.3.1/schema.json",
+  "changelog": "@changesets/cli/changelog",
+  "commit": false,
+  "fixed": [["@acme/ui", "@acme/ui-utils", "@acme/utils", "@acme/tailwind-config", "@acme/tsconfig"]],
+  "linked": [],
+  "access": "restricted",
+  "baseBranch": "canary",
+  "updateInternalDependencies": "patch",
+  "___experimentalUnsafeOptions_WILL_CHANGE_IN_PATCH": {
+    "onlyUpdatePeerDependentsWhenOutOfRange": true
+  },
+  "ignore": ["docs", "next-app-play"]
+}

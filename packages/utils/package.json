@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json.schemastore.org/package",
+  "name": "@acme/utils",
+  "version": "0.0.1-beta.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "clean": "git clean -xdf .turbo node_modules dist",
+    "lint": "eslint \"src/**/*.{ts,js,tsx,jsx}\" --fix",
+    "type:check": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "devDependencies": {
+    "@acme/tsconfig": "0.0.1-beta.1",
+    "tsup": "^7.0.0"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}

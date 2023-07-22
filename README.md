@@ -1,5 +1,7 @@
 # Turbo Packages
 
+[![Deploy on Zeabur](https://zeabur.com/button.svg)](https://dash.zeabur.com/templates/CLI3GE)
+
 A starter monorepo built with Turborepo, Nextjs, Docker, Typescript, Vitest and Tailwind.
 
 ## What's included

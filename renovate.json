@@ -12,7 +12,7 @@
   },
   "packageRules": [
     {
-      "matchPackagePatterns": ["^@chiastack/"],
+      "matchPackagePatterns": ["^@acme/"],
       "enabled": false
     },
     {

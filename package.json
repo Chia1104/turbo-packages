@@ -50,7 +50,7 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-config-turbo": "^1.10.6",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-react": "7.32.2",
+    "eslint-plugin-react": "7.34.1",
     "eslint-plugin-tailwindcss": "3.12.1",
     "happy-dom": "^9.20.3",
     "husky": "^8.0.3",
